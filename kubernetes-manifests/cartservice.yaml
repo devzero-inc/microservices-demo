@@ -115,7 +115,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: redis:alpine
+        image: ghcr.io/devzero-inc/redis:alpine
         ports:
         - containerPort: 6379
         readinessProbe:

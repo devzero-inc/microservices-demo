@@ -24,33 +24,43 @@ build:
   # https://skaffold.dev/docs/concepts/#image-repository-handling
   - image: emailservice
     context: src/emailservice
+    kaniko: {}
   - image: productcatalogservice
     context: src/productcatalogservice
+    kaniko: {}
   - image: recommendationservice
     context: src/recommendationservice
+    kaniko: {}
   - image: shoppingassistantservice
     context: src/shoppingassistantservice
+    kaniko: {}
   - image: shippingservice
     context: src/shippingservice
+    kaniko: {}
   - image: checkoutservice
     context: src/checkoutservice
+    kaniko: {}
   - image: paymentservice
     context: src/paymentservice
+    kaniko: {}
   - image: currencyservice
     context: src/currencyservice
+    kaniko: {}
   - image: cartservice
     context: src/cartservice/src
-    docker:
+    kaniko:
       dockerfile: Dockerfile
   - image: frontend
     context: src/frontend
+    kaniko: {}
   - image: adservice
     context: src/adservice
+    kaniko: {}
   tagPolicy:
     gitCommit: {}
-  local:
-    useBuildkit: false
-    concurrency: 0
+  cluster:
+    dockerConfig:
+      path: ~/.docker/config.json
 manifests:
   kustomize:
     paths:
