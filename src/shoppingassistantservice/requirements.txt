@@ -175,7 +175,7 @@ proto-plus==1.25.0
     #   google-ai-generativelanguage
     #   google-api-core
     #   google-cloud-secret-manager
-protobuf==5.28.3
+protobuf==5.29.5
     # via
     #   google-ai-generativelanguage
     #   google-api-core
